@@ -180,4 +180,4 @@ elif(args.mode == "transfer"):
     )
     waveform = waveform[:,None,:]
 
-save_wave(waveform, save_path, name="%s_%s" % (get_time(), text))
+save_wave(waveform, save_path, name="ts_%f" % (args.transfer_strength))
