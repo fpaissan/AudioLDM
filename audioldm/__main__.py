@@ -180,5 +180,12 @@ elif(args.mode == "transfer"):
     )
     waveform = waveform[:,None,:]
 
-print("saving to...", "ts_%f.wav" % (args.transfer_strength)
 save_wave(waveform, save_path, name="ts_%f" % (args.transfer_strength))
+with open(os.path.join(save_path, "prompt.txt"), "w") as f:
+    f.write(text)
+
+import torchaudio
+wav, sr = torchaudio.load(args.file_path)
+torchaudio.save(os.path.join(save_path, "original.wav"), wav, sr)
+print("saved")
+
