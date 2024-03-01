@@ -180,4 +180,5 @@ elif(args.mode == "transfer"):
     )
     waveform = waveform[:,None,:]
 
+print("saving to...", "ts_%f.wav" % (args.transfer_strength)
 save_wave(waveform, save_path, name="ts_%f" % (args.transfer_strength))
